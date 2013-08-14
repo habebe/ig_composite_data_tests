@@ -9,7 +9,7 @@
     	<Data scale="1">
         	<Object>
         	<![CDATA[
-        		data.name = "domain.{0}.com".format(Integer.uniform(1,2000))
+        		data.name = "domain.{0}.com".format(Integer.sequence())
           		]]>
          	</Object>
       	</Data>
@@ -23,7 +23,7 @@
     	<Data scale="1">
         	<Object>
         	<![CDATA[
-        		data.name = "country.{0}".format(Integer.uniform(1,20))
+        		data.name = "country.{0}".format(Integer.uniform(1,15)) if (size < 150) else "country.{0}".format(Integer.uniform(1,size/10)) 
           		]]>
          	</Object>
       	</Data>
@@ -36,7 +36,7 @@
     	<Data scale="1">
         	<Object>
         	<![CDATA[
-        		data.name = "registrar.{0}".format(Integer.uniform(1,100))
+        		data.name = "registrar.{0}".format(Integer.uniform(1,size))
           		]]>
          	</Object>
       	</Data>
@@ -49,7 +49,7 @@
     	<Data scale="1">
         	<Object>
         	<![CDATA[
-        		data.name = "name_{0}@domain.come".format(Integer.uniform(1,2000))
+        		data.name = "name_{0}@domain.come".format(Integer.uniform(1,size))
           		]]>
          	</Object>
       	</Data>
@@ -63,7 +63,7 @@
     	<Data scale="1">
         	<Object>
         	<![CDATA[
-        		data.name = "name_server.{0}".format(Integer.uniform(1,10000))
+        		data.name = "name_server.{0}".format(Integer.uniform(1,10)) if (size < 100) else "name_server.{0}".format(Integer.uniform(1,size/10))
           		]]>
          	</Object>
       	</Data>

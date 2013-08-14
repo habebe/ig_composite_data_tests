@@ -4,7 +4,7 @@ graph_size = [pow(2,12)]
 description = "Ingest as a function of transaction size (graph size {0}).".format(graph_size)
 
 tx_sizes = []
-for i in xrange(4,8):
+for i in xrange(4,13):
     tx_sizes.append(pow(2,i))
     pass
 tx_sizes.reverse()
