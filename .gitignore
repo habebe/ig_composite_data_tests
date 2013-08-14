@@ -1,5 +1,7 @@
 *.py[cod]
-
+benchmark_web_report
+working
+*~
 # C extensions
 *.so
 
