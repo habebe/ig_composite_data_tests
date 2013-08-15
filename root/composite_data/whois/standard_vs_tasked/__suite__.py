@@ -6,5 +6,6 @@ suites = [
     "composite_txsize",
     "composite_pagesize",
     "composite_datasize",
+    "composite_datasize_noquery",
     "worst_vs_best_case"
     ]

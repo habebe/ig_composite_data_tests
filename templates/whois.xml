@@ -91,7 +91,23 @@
 		</Vertex>		
 	</CompositeData>	
 	
-	
+	<CompositeData name="BaseModel.noquery">
+		<Vertex name="Domain" scale="1" unique="false">
+			<Edge type="0" name="OwnerCountry" unique="false">
+				<Vertex name="Country" unique="false"/>
+			</Edge>
+			<Edge type="0" name="OwnerRegistrar" unique="false">
+				<Vertex name="Registrar" unique="false"/>
+			</Edge>
+			<Edge type="0" name="OwnerEmail" unique="false">
+				<Vertex name="Email" unique="false"/>
+			</Edge>
+			<Edge type="0" name="NameServerEdge" unique="false" scale="Integer.uniform(1,10)">
+				<Vertex scale="Integer.uniform(1,10)" name="NameServer" unique="false" />
+			</Edge>
+		</Vertex>		
+	</CompositeData>	
+
 	<CompositeData name="BaseModel.1">
 		<Vertex name="Domain" scale="1" unique="true">
 			<Edge type="0" name="OwnerCountry" unique="true">
