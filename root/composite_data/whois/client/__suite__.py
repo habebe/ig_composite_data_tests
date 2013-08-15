@@ -4,4 +4,5 @@ description = "Ingest performance for whois graph comparing pipelined tasks (cli
 #add suite directories to this list.
 suites = [
     "threaded",
+    "processes"
     ]
