@@ -92,6 +92,56 @@
 	</CompositeData>	
 	
 	
+	<CompositeData name="BaseModel.1">
+		<Vertex name="Domain" scale="1" unique="true">
+			<Edge type="0" name="OwnerCountry" unique="true">
+				<Vertex name="Country" unique="true"/>
+			</Edge>
+		</Vertex>		
+	</CompositeData>	
+
+	<CompositeData name="BaseModel.2">
+		<Vertex name="Domain" scale="1" unique="true">
+			<Edge type="0" name="OwnerCountry" unique="true">
+				<Vertex name="Country" unique="true"/>
+			</Edge>
+			<Edge type="0" name="OwnerRegistrar" unique="true">
+				<Vertex name="Registrar" unique="true"/>
+			</Edge>
+		</Vertex>		
+	</CompositeData>	
+
+	<CompositeData name="BaseModel.3">
+		<Vertex name="Domain" scale="1" unique="true">
+			<Edge type="0" name="OwnerCountry" unique="true">
+				<Vertex name="Country" unique="true"/>
+			</Edge>
+			<Edge type="0" name="OwnerRegistrar" unique="true">
+				<Vertex name="Registrar" unique="true"/>
+			</Edge>
+			<Edge type="0" name="OwnerEmail" unique="true">
+				<Vertex name="Email" unique="true"/>
+			</Edge>
+		</Vertex>		
+	</CompositeData>
+	
+	<CompositeData name="BaseModel.4">
+		<Vertex name="Domain" scale="1" unique="true">
+			<Edge type="0" name="OwnerCountry" unique="true">
+				<Vertex name="Country" unique="true"/>
+			</Edge>
+			<Edge type="0" name="OwnerRegistrar" unique="true">
+				<Vertex name="Registrar" unique="true"/>
+			</Edge>
+			<Edge type="0" name="OwnerEmail" unique="true">
+				<Vertex name="Email" unique="true"/>
+			</Edge>
+			<Edge type="0" name="NameServerEdge" unique="true" scale="Integer.uniform(1,10)">
+				<Vertex scale="Integer.uniform(1,10)" name="NameServer" unique="true" />
+			</Edge>
+		</Vertex>		
+	</CompositeData>	
+
    </Definitions>
    
    <Indicies>
