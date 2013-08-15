@@ -5,5 +5,6 @@ description = "Ingest performance for whois graph comparing standard ingest vs. 
 suites = [
     "composite_txsize",
     "composite_pagesize",
-    "composite_datasize"
+    "composite_datasize",
+    "worst_vs_best_case"
     ]
