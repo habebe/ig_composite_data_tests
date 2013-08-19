@@ -1,19 +1,19 @@
-name = "processes"
+name = "disks"
 
 graph_size = pow(2,13)
-description = "Ingest as a function of threads (graph size {0})).".format(graph_size)
+description = "Ingest as a function of processes and disks (graph size {0})).".format(graph_size)
 threads = [1]
 processes = []
-for i in xrange(1,16):
+for i in xrange(1,3):
     processes.append((None,i))
     pass
 processes.reverse()
 
-#processes = [(None,1),(None,2),(None,3),(None,4),(None,5),(None,6),(None,7),(None,8)]
 tx_sizes = [pow(2,13)]
 page_sizes = [13]
 table_view = [
     [{"sTitle":"Platform"},{"content":"object.platform()"}],
+    [{"sTitle":"Config"},{"content":"'{0}'.format(object.config())"}],
     [{"sTitle":"Processes"},{"content":"object.processes()"}],
     [{"sTitle":"Rate (v/s)"},{"content":"'%.2f'%(object.rate_avg())"}],
     [{"sTitle":"Time (ms)"},{"content":"object.time_avg()"}]
@@ -26,6 +26,7 @@ plot_view = {
         ],
     "ivar":[
         {"name":"Platform","id":"object.platform_id()","content":"object.platform()"},
+        {"name":"Config","id":"object.config_id()","content":"object.config()"},
         ]
 }
 
@@ -39,7 +40,7 @@ cases = [
         {
             "composite_name":"BaseModel",
             "template":["whois"],
-            "config":["default:default"],
+            "config":["local_disks:1","local_disks:2","local_disks:3","local_disks:4"],
             "page_size":page_sizes,
             "threads":threads,
             "process":processes,            

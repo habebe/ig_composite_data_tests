@@ -5,5 +5,6 @@ description = "Ingest performance for whois graph comparing pipelined tasks (cli
 suites = [
     "threaded",
     "processes",
-    "payload"
+    "payload",
+    "disks"
     ]
