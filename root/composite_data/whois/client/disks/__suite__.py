@@ -4,7 +4,7 @@ graph_size = pow(2,13)
 description = "Ingest as a function of processes and disks (graph size {0})).".format(graph_size)
 threads = [1]
 processes = []
-for i in xrange(1,3):
+for i in xrange(3,8):
     processes.append((None,i))
     pass
 processes.reverse()
