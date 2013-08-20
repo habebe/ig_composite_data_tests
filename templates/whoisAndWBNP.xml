@@ -31,10 +31,22 @@
       </Fields>
     </Vertex>
     
+    <Vertex name="Ip">
+      <Fields>
+    	<String name="ip"/>
+      </Fields>
+    </Vertex>
+
+    
     <Edge name="OwnerCountry"/>
     <Edge name="OwnerRegistrar"/>
     <Edge name="NameServerEdge"/>
     <Edge name="OwnerEmail"/>
+    <Edge name="IpDomain">
+    	<Fields>
+    		<Double name="volume" append="true"/>
+    	</Fields>
+    </Edge>
     
    </Definitions>
    
@@ -58,6 +70,10 @@
      <GraphIndex class="NameServer" unique="false">
       <Field name="name"/>
     </GraphIndex> 
-    
+
+     <GraphIndex class="Ip" unique="false">
+      <Field name="ip"/>
+    </GraphIndex> 
+
   </Indicies>
 </Template>
