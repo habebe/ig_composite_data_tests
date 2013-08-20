@@ -9,7 +9,7 @@ for i in xrange(1,16):
     pass
 processes.reverse()
 
-tx_sizes = [pow(2,6)]
+tx_sizes = [pow(2,12)]
 page_sizes = [12]
 table_view = [
     [{"sTitle":"Platform"},{"content":"object.platform()"}],
@@ -26,7 +26,7 @@ plot_view = {
         ],
     "ivar":[
         {"name":"Platform","id":"object.platform_id()","content":"object.platform()"},
-        {"name":"Platform","id":"object.threads()","content":"object.threads()"},
+        {"name":"Threads","id":"object.threads()","content":"object.threads()"},
         ]
 }
 
