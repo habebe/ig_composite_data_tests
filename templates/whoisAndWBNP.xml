@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Template namespace="com.whois.WBNP">
+  <Definitions>
+    <Vertex name="Domain">
+      <Fields>
+    	<String name="name"/>
+      </Fields>
+    </Vertex>
+    
+    <Vertex name="Country">
+      <Fields>
+    	<String name="name"/>
+      </Fields>
+    </Vertex>
+    
+    <Vertex name="Registrar">
+      <Fields>
+    	<String name="name"/>
+      </Fields>
+    </Vertex>
+    
+    <Vertex name="Email">
+      <Fields>
+    	<String name="name"/>
+      </Fields>
+    </Vertex>
+    
+    <Vertex name="NameServer">
+      <Fields>
+    	<String name="name"/>
+      </Fields>
+    </Vertex>
+    
+    <Edge name="OwnerCountry"/>
+    <Edge name="OwnerRegistrar"/>
+    <Edge name="NameServerEdge"/>
+    <Edge name="OwnerEmail"/>
+    
+   </Definitions>
+   
+   <Indicies>
+    <GraphIndex class="Domain" unique="false">
+      <Field name="name"/>
+    </GraphIndex> 
+    
+    <GraphIndex class="Country" unique="false">
+      <Field name="name"/>
+    </GraphIndex>
+    
+    <GraphIndex class="Registrar" unique="false">
+      <Field name="name"/>
+    </GraphIndex>
+    
+    <GraphIndex class="Email" unique="false">
+      <Field name="name"/>
+    </GraphIndex>   
+    
+     <GraphIndex class="NameServer" unique="false">
+      <Field name="name"/>
+    </GraphIndex> 
+    
+  </Indicies>
+</Template>

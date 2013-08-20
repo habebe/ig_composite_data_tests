@@ -1,22 +1,22 @@
 name = "processes"
 
 graph_size = pow(2,13)
-description = "Ingest as a function of threads (graph size {0})).".format(graph_size)
-threads = [1]
+description = "Ingest as a function of processes/threads (graph size {0})).".format(graph_size)
+threads = [1,2]
 processes = []
 for i in xrange(1,16):
     processes.append((None,i))
     pass
 processes.reverse()
 
-#processes = [(None,1),(None,2),(None,3),(None,4),(None,5),(None,6),(None,7),(None,8)]
-tx_sizes = [pow(2,13)]
-page_sizes = [13]
+tx_sizes = [pow(2,6)]
+page_sizes = [12]
 table_view = [
     [{"sTitle":"Platform"},{"content":"object.platform()"}],
     [{"sTitle":"Processes"},{"content":"object.processes()"}],
     [{"sTitle":"Rate (v/s)"},{"content":"'%.2f'%(object.rate_avg())"}],
-    [{"sTitle":"Time (ms)"},{"content":"object.time_avg()"}]
+    [{"sTitle":"Time (ms)"},{"content":"object.time_avg()"}],
+    [{"sTitle":"Threads"},{"content":"object.threads()"}],
     ]
 
 plot_view = {
@@ -26,10 +26,10 @@ plot_view = {
         ],
     "ivar":[
         {"name":"Platform","id":"object.platform_id()","content":"object.platform()"},
+        {"name":"Platform","id":"object.threads()","content":"object.threads()"},
         ]
 }
 
-cases = []
 cases = [
     {
         "name":"pipeline.client.submit",
