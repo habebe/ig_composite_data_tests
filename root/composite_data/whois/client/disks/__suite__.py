@@ -4,11 +4,10 @@ graph_size = pow(2,13)
 description = "Ingest as a function of processes and disks (graph size {0})).".format(graph_size)
 threads = [1]
 processes = []
-for i in xrange(3,8):
+for i in xrange(1,7):
     processes.append((None,i))
     pass
 processes.reverse()
-
 tx_sizes = [pow(2,13)]
 page_sizes = [13]
 table_view = [
@@ -16,7 +15,8 @@ table_view = [
     [{"sTitle":"Config"},{"content":"'{0}'.format(object.config())"}],
     [{"sTitle":"Processes"},{"content":"object.processes()"}],
     [{"sTitle":"Rate (v/s)"},{"content":"'%.2f'%(object.rate_avg())"}],
-    [{"sTitle":"Time (ms)"},{"content":"object.time_avg()"}]
+    [{"sTitle":"Time (ms)"},{"content":"object.time_avg()"}],
+    [{"sTitle":"Version"},{"content":"object.engine()"}]
     ]
 
 plot_view = {
@@ -27,6 +27,7 @@ plot_view = {
     "ivar":[
         {"name":"Platform","id":"object.platform_id()","content":"object.platform()"},
         {"name":"Config","id":"object.config_id()","content":"object.config()"},
+        {"name":"Version","id":"object.engine()","content":"object.engine()"},
         ]
 }
 
@@ -48,7 +49,7 @@ cases = [
             "new":1,
             "size":[graph_size],
             "txsize":tx_sizes,
-            "ig_version":["ig.3.1.task"]
+            "ig_version":["ig.3.1.task.2","ig.3.1.task"]
             },
         "table_view":table_view,
         "plot_view":plot_view
