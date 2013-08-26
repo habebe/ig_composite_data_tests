@@ -1,10 +1,10 @@
 name = "disks"
 
-graph_size = pow(2,13)
+graph_size = pow(2,17)
 description = "Ingest as a function of processes and disks (graph size {0})).".format(graph_size)
 threads = [1]
 processes = []
-for i in xrange(1,7):
+for i in [1,2,3,4,5]:
     processes.append((None,i))
     pass
 processes.reverse()
@@ -27,7 +27,7 @@ plot_view = {
     "ivar":[
         {"name":"Platform","id":"object.platform_id()","content":"object.platform()"},
         {"name":"Config","id":"object.config_id()","content":"object.config()"},
-        {"name":"Version","id":"object.engine()","content":"object.engine()"},
+        {"name":"Version","id":"object.engine_id()","content":"object.engine()"},
         ]
 }
 
@@ -49,7 +49,7 @@ cases = [
             "new":1,
             "size":[graph_size],
             "txsize":tx_sizes,
-            "ig_version":["ig.3.1.task.2","ig.3.1.task"]
+            "ig_version":["ig.3.1.task"],
             },
         "table_view":table_view,
         "plot_view":plot_view

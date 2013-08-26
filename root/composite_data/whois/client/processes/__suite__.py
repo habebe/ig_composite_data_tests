@@ -1,16 +1,16 @@
 name = "processes"
 
-graph_size = pow(2,13)
+graph_size = pow(2,17)
 description = "Ingest as a function of processes/threads (graph size {0})).".format(graph_size)
-threads = [1,2]
+threads = [1,2,4]
 processes = []
-for i in xrange(1,16):
+for i in xrange(1,8):
     processes.append((None,i))
     pass
 processes.reverse()
 
-tx_sizes = [pow(2,12)]
-page_sizes = [12]
+tx_sizes = [pow(2,13)]
+page_sizes = [14]
 table_view = [
     [{"sTitle":"Platform"},{"content":"object.platform()"}],
     [{"sTitle":"Processes"},{"content":"object.processes()"}],

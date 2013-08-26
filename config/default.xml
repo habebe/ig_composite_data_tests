@@ -5,6 +5,7 @@
                 <Engine version="ig.3.0" home="/Applications/InfiniteGraph/3.0" model="InfiniteGraph"/>
                 <Engine version="ig.3.1" home="/Applications/InfiniteGraph/3.1" model="IG"/>
                 <Engine version="ig.3.1.task" home="/Applications/InfiniteGraph/3.1.task" model="IG"/>
+                <Engine version="ig.3.1.task.2" home="/Applications/InfiniteGraph/3.1.task.pre_create" model="IG"/>
         </EngineList>
 
         <Config name="default">

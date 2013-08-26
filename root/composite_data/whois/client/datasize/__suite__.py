@@ -1,6 +1,6 @@
 name = "dataset size"
 
-tx_sizes = [pow(2,10)]
+tx_sizes = [pow(2,13)]
 page_sizes = [13]
 graph_sizes = []
 for i in xrange(17,21):
@@ -48,32 +48,6 @@ cases = [
         "plot_view":plot_view
         }
     ]
-
-cases_ = []
-cases_.append(
-    {
-        "name":"standard",
-        "description":"Composite Ingest as a function of dataset size",
-        "type":"composite_ingest",
-        "data":
-        {
-            "composite_name":"BaseModel",
-            "template":["whois"],
-            "config":["default:default"],
-            "page_size":page_sizes,
-            "threads":[1],
-            "use_index":[1],
-            "new":1,
-            "size":graph_sizes,
-            "txsize":tx_sizes,
-            "ig_version":["ig.3.1.task"]
-            },
-        "table_view":table_view,
-        "plot_view":plot_view
-        }
-    )
-
-
 
     
 

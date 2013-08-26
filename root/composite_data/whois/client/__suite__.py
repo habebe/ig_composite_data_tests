@@ -6,5 +6,8 @@ suites = [
     "threaded",
     "processes",
     "payload",
-    "disks"
+    "disks",
+    "datasize",
+    "pagesize",
+    "txsize"
     ]

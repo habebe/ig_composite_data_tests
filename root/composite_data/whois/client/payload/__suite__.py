@@ -1,9 +1,9 @@
 name = "payload"
 
-graph_size = [pow(2,12)]
+graph_size = [pow(2,17)]
 description = "Ingest as a function of page size (graph size {0}).".format(graph_size)
 
-tx_sizes = [pow(2,7)]
+tx_sizes = [pow(2,13)]
 page_sizes = [16,15,14,13,12,11,10]
 table_view = [
     [{"sTitle":"Platform"},{"content":"object.platform()"}],

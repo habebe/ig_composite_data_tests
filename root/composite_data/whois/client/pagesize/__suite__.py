@@ -1,42 +1,42 @@
-name = "threaded"
+name = "page size"
 
-graph_size = pow(2,13)*4
-description = "Ingest as a function of threads (graph size {0})).".format(graph_size)
-threads = [1,2,4,8]
+graph_size = [pow(2,17)]
+description = "Ingest as a function of page size (graph size {0}).".format(graph_size)
+
 tx_sizes = [pow(2,13)]
+page_sizes = [16,15,14,13,12,11,10]
 table_view = [
     [{"sTitle":"Platform"},{"content":"object.platform()"}],
-    [{"sTitle":"Threads"},{"content":"object.threads()"}],
-    [{"sTitle":"Rate (v/s)"},{"content":"'%.2f'%(object.rate_avg())"}],
+    [{"sTitle":"Page Size"},{"content":"object.page_size()"}],
+    [{"sTitle":"Rate (ops/sec)"},{"content":"'%.2f'%(object.rate_avg())"}],
     [{"sTitle":"Time (ms)"},{"content":"object.time_avg()"}]
     ]
 
 plot_view = {
     "plot":[
-        {"name":"rate","data":("object.rate_avg()","object.threads()"),"xaxis":"threads"},
-        {"name":"time","data":("object.time_avg()*0.001","object.threads()"),"xaxis":"threads"},
+        {"name":"rate","data":("object.rate_avg()","object.page_size()"),"xaxis":"pow(2,Page size)"},
+        {"name":"time","data":("object.time_avg()*0.001","object.page_size()"),"xaxis":"pow(2,Page size)"},
         ],
     "ivar":[
         {"name":"Platform","id":"object.platform_id()","content":"object.platform()"},
         ]
 }
 
-cases = []
 cases = [
     {
         "name":"pipeline.client.submit",
-        "description":"Composite Ingest as a function of threads",
+        "description":"Composite Ingest as a function of page size (transaction size = {0})".format(tx_sizes),
         "type":"pipeline_composite_ingest",
         "data":
         {
             "composite_name":"BaseModel",
             "template":["whois"],
             "config":["default:default"],
-            "page_size":[13],
-            "threads":threads,
+            "page_size":page_sizes,
+            "threads":[1],
             "use_index":[1],
             "new":1,
-            "size":[graph_size],
+            "size":graph_size,
             "txsize":tx_sizes,
             "ig_version":["ig.3.1.task"]
             },
@@ -45,14 +45,3 @@ cases = [
         }
     ]
 
-
-
-    
-
-
-    
-
-
-
-
-    
