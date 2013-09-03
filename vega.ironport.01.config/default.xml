@@ -8,7 +8,7 @@
   <Config name="default">
     <Lockserver address="dev-analysis-nosql-01.vega.ironport.com"/>
     <Host address="dev-analysis-nosql-01.vega.ironport.com">
-      <Disk location="/data/benchmark"/>
+      <Disk location="/data2/benchmark"/>
     </Host>
   </Config>
 </ConfigList>
